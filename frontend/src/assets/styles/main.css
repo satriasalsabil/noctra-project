@@ -1,0 +1,80 @@
+@import 'tailwindcss';
+
+/*
+ * NOCTRA Market design tokens.
+ * Source of truth: project brief.
+ *   Forest Green  #234436
+ *   Linen / Ivory #F4F0E6
+ *   Leather Brown #79563C
+ *   Charcoal      #292A25
+ * Derived tones below are for hover, borders, and surfaces only.
+ */
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-serif: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+
+  --color-forest: #234436;
+  --color-forest-dark: #1a3329;
+  --color-forest-soft: #2f5745;
+
+  --color-linen: #f4f0e6;
+  --color-paper: #ffffff;
+
+  --color-leather: #79563c;
+  --color-leather-dark: #5f4230;
+
+  --color-charcoal: #292a25;
+  --color-muted: #6e6c63;
+  --color-line: #e2ddd1;
+  --color-stone-warm: #eae7df;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-linen);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-forest);
+    color: var(--color-linen);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-forest);
+    outline-offset: 3px;
+  }
+}
+
+/* Shared page gutter: 80rem (1280px) canvas with editorial margins. */
+@utility container-page {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+
+  @media (width >= 48rem) {
+    padding-inline: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
