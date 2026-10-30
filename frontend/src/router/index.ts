@@ -16,7 +16,7 @@ const NotFoundView = () => import('@/views/NotFoundView.vue')
 const DEFAULT_TITLE = 'NOCTRA Market — Heritage-Inspired Essentials'
 
 /*
- * Route tree mirrors docs/routing map: one parent per layout, pages as children.
+ * Route tree mirrors docs/routing-map.md: one parent per layout, pages as children.
  * `meta.title` is the short page name; the full document title is composed below.
  */
 const routes: RouteRecordRaw[] = [
